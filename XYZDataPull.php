@@ -5,7 +5,7 @@ require_once "DataPull.php";
 class XYZDataPull extends DataPull{
 
 	public function calculateYearlyTotals($year){
-		
+		 
 		$sumTotal = 0; 
 		$data = array("year" => 2017);
 		$data_string = json_encode($data);

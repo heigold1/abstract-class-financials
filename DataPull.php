@@ -1,7 +1,7 @@
 <?php 
 
 	abstract class DataPull{
-
+ 
 	protected $yearlyAverage; 
 	public function getYearlyAverage()
 	{
