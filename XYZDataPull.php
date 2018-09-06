@@ -6,7 +6,7 @@ class XYZDataPull extends DataPull{
 
 	public function calculateYearlyTotals($year){
 		 
-		$sumTotal = 0; 
+	 	$sumTotal = 0; 
 		$data = array("year" => 2017);
 		$data_string = json_encode($data);
 

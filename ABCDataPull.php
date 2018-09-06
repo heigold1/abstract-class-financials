@@ -3,7 +3,7 @@
 require_once "DataPull.php";
 
 class ABCDataPull extends DataPull{
- 
+  
 	public function calculateYearlyTotals($year){
 		
 		$sumTotal = 0; 
