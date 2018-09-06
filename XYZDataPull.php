@@ -2,7 +2,7 @@
 
 require_once "DataPull.php";
 
-class XYZDataPull extends DataPull{
+class XYZDataPull extends DataPull{ 
 
 	public function calculateYearlyTotals($year){
 		 
