@@ -7,10 +7,10 @@ class XYZDataPull extends DataPull{
 	public function calculateYearlyTotals($year){
 		 
 	 	$sumTotal = 0; 
-		$data = array("year" => 2017);
+		$data = array("year" => $year);
 		$data_string = json_encode($data);
 
-		$ch = curl_init('http://ec2-52-41-122-145.us-west-2.compute.amazonaws.com/api-xyz/financials.php');
+		$ch = curl_init('http://ec2-54-210-42-143.compute-1.amazonaws.com/api-xyz/financials.php?year=' . $year);
 	  	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
 	  	curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
 	  	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -20,11 +20,10 @@ class XYZDataPull extends DataPull{
 	      		'Content-Length: ' . strlen($data_string)
 	    		)                                                                       
 			);                                                                                          
-		
-		$result = curl_exec($ch);
-		$resultObject = json_decode($result);
 
-		$resultArray = get_object_vars($resultObject->totals_by_month);
+		$result = curl_exec($ch);
+
+		$resultArray = json_decode($result);
 
 		foreach ($resultArray as $monthlyAmount)
 		{

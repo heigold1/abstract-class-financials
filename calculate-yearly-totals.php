@@ -3,15 +3,19 @@
 require "./ABCDataPull.php"; 
 require "./XYZDataPull.php"; 
 
-
-$dataPullABC = new XYZDataPull();
-$dataPullABC->calculateYearlyTotals(2017);
-echo "Yearly average for company ABC is $" . number_format($dataPullABC->getYearlyAverage(), 2);
+$dataPullABC = new ABCDataPull();
+$dataPullABC->calculateYearlyTotals(2018);
+$yearlyAverageABC = number_format($dataPullABC->getYearlyAverage(), 2);
+echo "Yearly average for company ABC is $" . $yearlyAverageABC;
   
 echo "<br><br>";
 
-$dataPullXYZ = new ABCDataPull();
-$dataPullXYZ->calculateYearlyTotals(2017);
-echo "Yearly average for company XYZ is $" . number_format($dataPullXYZ->getYearlyAverage(), 2);
+
+$dataPullXYZ = new XYZDataPull();
+
+$dataPullXYZ->calculateYearlyTotals(2018);
+$yearlyAverageXYZ = number_format($dataPullXYZ->getYearlyAverage(), 2);
+
+echo "Yearly average for company XYZ is $" . $yearlyAverageXYZ; 
 
 ?> 
